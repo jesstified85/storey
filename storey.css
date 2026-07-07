@@ -161,7 +161,7 @@ h2.big{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,54px);l
 .cs-parallax{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);margin:34px 0 0;background:var(--cream-2)}
 .cs-parallax:not(.tall){aspect-ratio:16/10}
 .cs-parallax.tall{aspect-ratio:5/6}
-.cs-parallax img,.cs-parallax video{position:absolute;left:0;width:100%;height:150%;top:-25%;object-fit:cover;object-position:top center;display:block;will-change:transform}
+.cs-parallax img,.cs-parallax video{position:absolute;left:0;width:100%;height:180%;top:-40%;object-fit:cover;object-position:top center;display:block;will-change:transform}
 .cs-cap{font-size:13px;color:var(--ink-soft);padding:12px 2px 0;margin:0 0 8px}
 /* subtle drift on the phone screenshots */
 .shot img{will-change:transform}

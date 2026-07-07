@@ -96,8 +96,8 @@
       prog = prog < 0 ? 0 : prog > 1 ? 1 : prog;
       var framed = el.parentElement && el.parentElement.classList.contains('cs-parallax');
       var shift = framed
-        ? (prog - 0.5) * (r.height * 0.24)   // up to ±12% of image height
-        : (prog - 0.5) * ((parseFloat(el.getAttribute('data-parallax')) || 0.05) * 900);
+        ? (prog - 0.5) * (r.height * 0.40)   // up to ±20% of image height (big pan, within 40% slack)
+        : (prog - 0.5) * ((parseFloat(el.getAttribute('data-parallax')) || 0.05) * 1000);
       el.style.transform = 'translateY(' + shift.toFixed(1) + 'px)';
     }
   }
