@@ -86,14 +86,18 @@
       heroContent.style.opacity = (1 - p * 0.9).toFixed(3);
     }
 
-    // Parallax elements: bounded pan based on progress through the viewport
+    // Parallax: bounded pan based on progress through the viewport.
+    // Framed images (inside .cs-parallax) pan strongly but stay within their 25% slack;
+    // loose images (phones) get a lighter drift.
     for (var i = 0; i < parallax.length; i++) {
       var el = parallax[i];
-      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.05;
       var r = el.getBoundingClientRect();
       var prog = (vh - r.top) / (vh + r.height); // 0 entering bottom → 1 leaving top
       prog = prog < 0 ? 0 : prog > 1 ? 1 : prog;
-      var shift = (prog - 0.5) * (speed * 700); // clamped: |shift| <= speed*350
+      var framed = el.parentElement && el.parentElement.classList.contains('cs-parallax');
+      var shift = framed
+        ? (prog - 0.5) * (r.height * 0.24)   // up to ±12% of image height
+        : (prog - 0.5) * ((parseFloat(el.getAttribute('data-parallax')) || 0.05) * 900);
       el.style.transform = 'translateY(' + shift.toFixed(1) + 'px)';
     }
   }
