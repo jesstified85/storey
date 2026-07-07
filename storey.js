@@ -86,13 +86,15 @@
       heroContent.style.opacity = (1 - p * 0.9).toFixed(3);
     }
 
-    // Parallax elements: subtle depth based on distance from viewport centre
+    // Parallax elements: bounded pan based on progress through the viewport
     for (var i = 0; i < parallax.length; i++) {
       var el = parallax[i];
-      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.06;
+      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.05;
       var r = el.getBoundingClientRect();
-      var offset = (r.top + r.height / 2) - vh / 2;
-      el.style.transform = 'translateY(' + (-offset * speed).toFixed(1) + 'px)';
+      var prog = (vh - r.top) / (vh + r.height); // 0 entering bottom → 1 leaving top
+      prog = prog < 0 ? 0 : prog > 1 ? 1 : prog;
+      var shift = (prog - 0.5) * (speed * 700); // clamped: |shift| <= speed*350
+      el.style.transform = 'translateY(' + shift.toFixed(1) + 'px)';
     }
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } header(); }
