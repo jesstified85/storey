@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MomTribe — Brand, Website &amp; App Case Study | Storey</title>
+<meta name="description" content="How Storey built MomTribe: a warm new brand, a community website, and a native app for a 6,000+ member community helping Utah moms find their people.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://madebystorey.com/work-momtribe">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Storey">
+<meta property="og:title" content="MomTribe — Brand, Website &amp; App Case Study | Storey">
+<meta property="og:description" content="Brand, community website, and standalone app for MomTribe — designed and built by Storey.">
+<meta property="og:url" content="https://madebystorey.com/work-momtribe">
+<meta property="og:image" content="https://madebystorey.com/logo/storey-appicon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MomTribe — Case Study | Storey">
+<meta name="twitter:description" content="Brand, website, and app for a fast-growing Utah community for moms.">
+<meta name="twitter:image" content="https://madebystorey.com/logo/storey-appicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storey.css">
+<link rel="icon" type="image/svg+xml" href="logo/storey-appicon.svg">
+<link rel="apple-touch-icon" href="logo/storey-appicon-180.png">
+<style>
+  .mt-hero{border-radius:20px;background:#C96532;color:#F7F5EE;padding:64px 40px;text-align:center;margin:14px 0 40px}
+  .mt-hero .fl{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;letter-spacing:.02em;opacity:.9}
+  .mt-hero h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(40px,7vw,74px);line-height:1;margin:8px 0}
+  .mt-hero p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,3vw,24px);opacity:.95}
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}
+  .swatch{border-radius:12px;border:1px solid var(--line);overflow:hidden;font-size:12px}
+  .swatch .chip{height:66px}
+  .swatch .n{padding:8px 10px;font-weight:600}
+  .swatch .h{padding:0 10px 9px;color:var(--ink-soft);letter-spacing:.02em}
+  .specimen{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:24px 0}
+  .specimen .dm{font-family:'DM Serif Display',serif;font-size:34px;line-height:1.1}
+  .specimen .pf{font-family:'Playfair Display',serif;font-style:italic;color:#C96532;font-size:22px;margin-top:6px}
+  .specimen .meta{font-size:14px;color:var(--ink-soft);margin-top:14px;line-height:1.9}
+  .specimen .meta b{color:var(--ink)}
+  .phones{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:30px 0}
+  .phonewrap{text-align:center}
+  .phone{width:172px;background:#3A332C;border-radius:30px;padding:8px}
+  .phone .scr{background:#F7F5EE;border-radius:22px;overflow:hidden;height:352px;display:flex;flex-direction:column;text-align:left}
+  .phone .bar{background:#C96532;color:#F7F5EE;padding:16px 14px 13px;font-family:'DM Serif Display',serif;font-size:18px;line-height:1.1}
+  .phone .bar small{display:block;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600;margin-bottom:3px}
+  .phone .body{padding:11px;display:flex;flex-direction:column;gap:9px}
+  .mc{background:#fff;border:1px solid #E8DDC2;border-radius:12px;padding:10px 11px}
+  .mc .t{font-weight:600;font-size:12px;color:#3A332C}
+  .mc .s{font-size:10px;color:#8a8072;margin-top:2px}
+  .mc .pill{display:inline-block;margin-top:8px;background:#C96532;color:#fff;font-size:9px;font-weight:600;padding:4px 10px;border-radius:100px}
+  .mc .pill.mg{background:#F2A938}.mc .pill.co{background:#FF6B5D}
+  .pcap{font-size:12px;color:var(--ink-soft);margin-top:10px;font-weight:600}
+  .appstore{display:inline-flex;align-items:center;gap:9px;background:#3A332C;color:#F7F5EE;padding:12px 20px;border-radius:100px;font-weight:600;font-size:14px;margin-top:8px}
+  .phone .grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .tile{background:#fff;border:1px solid #E8DDC2;border-radius:11px;padding:9px}
+  .tile .ic{width:20px;height:20px;border-radius:6px;background:#F6E2D8;margin-bottom:6px}
+  .tile .ic.sg{background:#DCE7D6}.tile .ic.mg{background:#FBE6C4}.tile .ic.pk{background:#F3D9E4}
+  .tile .t{font-size:10px;font-weight:700;color:#3A332C}
+  .tile .s{font-size:8.5px;color:#8a8072}
+  .spons{background:#fff;border:1px solid #E8DDC2;border-radius:11px;padding:8px 10px;font-size:8.5px}
+  .spons b{color:#F2A938;letter-spacing:.1em;font-size:7.5px}
+  .spons .t{font-size:11px;font-weight:700;color:#3A332C}
+  .chips{display:flex;gap:5px;overflow:hidden}
+  .chip2{font-size:8px;font-weight:600;padding:4px 9px;border-radius:100px;background:#EDE6D8;color:#5c554b;white-space:nowrap}
+  .chip2.on{background:#C96532;color:#fff}
+  .tabbar{margin-top:auto;background:#CBD5C2;display:flex;justify-content:space-around;align-items:center;padding:7px 4px 8px;font-size:7px;color:#4c5647;font-weight:600}
+  .tabbar span.on{color:#3A332C}
+  .tabbar .home{width:22px;height:22px;border-radius:50%;background:#C96532;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:-14px;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+  .mt-hero img.logo-w{width:190px;margin:0 auto 16px;display:block}
+  .shots{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:30px 0}
+  .shot{width:196px}
+  .shot img{width:196px;border-radius:20px;border:1px solid var(--line);box-shadow:0 18px 40px -22px rgba(0,0,0,.45)}
+  .shot .pcap{margin-top:10px;text-align:center}
+  .brandmark{background:#EFE8DB;border:1px solid var(--line);border-radius:16px;text-align:center;padding:34px;margin:24px 0}
+  .brandmark img{width:112px;border-radius:22px;margin:0 auto}
+  .brandmark figcaption{font-size:13px;color:var(--ink-soft);margin-top:14px}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+  .bacol{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .balabel{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8a8072;margin-bottom:12px}
+  .balabel.after{color:#C96532}
+  .miniswatches{display:flex;gap:6px;flex-wrap:wrap}
+  .miniswatches span{width:30px;height:30px;border-radius:7px;border:1px solid rgba(0,0,0,.06)}
+  .banote{font-size:13px;color:var(--ink-soft);margin-top:12px}
+  .logo-figure{background:#fff;border:1px solid var(--line);border-radius:16px;text-align:center;padding:36px;margin:24px 0}
+  .logo-figure img{max-width:360px;width:80%;margin:0 auto}
+  .logo-figure figcaption{font-size:13px;color:var(--ink-soft);margin-top:16px}
+  @media(max-width:860px){.ba{grid-template-columns:1fr}}
+  @media(max-width:860px){.swatches{grid-template-columns:repeat(2,1fr)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://madebystorey.com/"},
+{"@type":"ListItem","position":2,"name":"Work","item":"https://madebystorey.com/work"},
+{"@type":"ListItem","position":3,"name":"MomTribe","item":"https://madebystorey.com/work-momtribe"}]}
+</script>
+</head>
+<body>
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="/" class="logo">St<svg class="o" viewBox="0 0 28 28" aria-hidden="true"><rect x="3.5" y="3.5" width="21" height="21" rx="5" fill="none" stroke="currentColor" stroke-width="3.2"/><rect x="5" y="13" width="18" height="3" fill="var(--coral)"/></svg>rey<span class="brick"></span></a>
+    <nav class="nav-links">
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="nav-cta">Start a project</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <article>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Case study · Community</p>
+        <h1 class="reveal">MomTribe</h1>
+        <p class="lede reveal">A rebrand, a community website, and the native app it became — built to help Utah moms find their people, show up to real events, and feel less alone.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="cs-meta reveal">
+        <div><div class="k">Client</div><div class="v">MomTribe (by TribeHouse)</div></div>
+        <div><div class="k">Disciplines</div><div class="v">Brand · Website · App</div></div>
+        <div><div class="k">Community</div><div class="v">6,000+ Utah moms</div></div>
+        <div><div class="k">Scope</div><div class="v">Strategy → design → build</div></div>
+      </div>
+
+      <div class="mt-hero reveal">
+        <img class="logo-w" src="work-assets/momtribe-logo-white.png" alt="MomTribe logo">
+        <div class="fl">Motherhood feels lighter together.</div>
+        <h2>Find your people.</h2>
+        <p>A community for moms — always free.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="cs-block reveal">
+        <h2>The challenge</h2>
+        <p>Modern motherhood can be isolating. MomTribe set out to change that in Utah — a genuinely welcoming community where local moms make real friendships, find events, and enjoy exclusive perks from nearby businesses. Growing county by county meant MomTribe needed three things most teams buy from three different vendors: a brand moms instantly trust, a website that turns visitors into members, and an app that keeps the community alive every day.</p>
+        <p><strong>Storey built all three</strong> as one connected system — so the voice, look, and feel are the same from the first Instagram tap to the daily app notification.</p>
+
+        <h2>1 · The rebrand</h2>
+        <p>MomTribe launched with an earlier identity — soft maroon and dusty rose with a bold, rounded heart-“M” wordmark. Warm, but it read casual and didn't have the range to carry a growing, multi-county community. We rebuilt it into something more editorial and grown-up without losing the warmth. The idea at its heart — <em>“Motherhood was never meant to be done alone”</em> — drives an encouraging, human voice anchored by the line <strong>“Find your people,”</strong> and county lockups (Salt Lake, Utah) let the brand scale to new communities.</p>
+        <div class="cs-parallax tall reveal"><img data-parallax="0.05" src="work-assets/momtribe-old-site.png" alt="The previous MomTribe website — a pink and maroon 'A Community for Moms' landing page" loading="lazy"></div>
+        <p class="cs-cap"><em>Where we started: the previous site — soft pink and maroon, and a little casual. (Scroll to pan.)</em></p>
+        <div class="ba reveal">
+          <div class="bacol">
+            <div class="balabel">Before</div>
+            <div class="miniswatches"><span style="background:#8f3a4c"></span><span style="background:#bd687a"></span><span style="background:#e2abad"></span><span style="background:#cd493d"></span><span style="background:#ffbc59"></span><span style="background:#e79f67"></span><span style="background:#e2c8b1"></span></div>
+            <p class="banote">Maroon &amp; dusty rose · a bold rounded heart-M wordmark · soft and a little casual.</p>
+          </div>
+          <div class="bacol">
+            <div class="balabel after">After</div>
+            <div class="miniswatches"><span style="background:#F7F5EE"></span><span style="background:#E8DDC2"></span><span style="background:#DB9A94"></span><span style="background:#C96532"></span><span style="background:#A8B89A"></span><span style="background:#F2A938"></span><span style="background:#FF6B5D"></span><span style="background:#3A332C"></span></div>
+            <p class="banote">Terracotta-led warm editorial · DM Serif + a delicate looped flourish · elegant and scalable.</p>
+          </div>
+        </div>
+        <figure class="logo-figure reveal">
+          <img src="work-assets/momtribe-logo.png" alt="Rebranded MomTribe logo — a looped flourish mark with a DM Serif wordmark">
+          <figcaption>The rebranded MomTribe logo — a delicate looped flourish paired with a warm editorial wordmark.</figcaption>
+        </figure>
+
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#F7F5EE"></div><div class="n">Warm Cream</div><div class="h">#F7F5EE</div></div>
+          <div class="swatch"><div class="chip" style="background:#E8DDC2"></div><div class="n">Oatmilk</div><div class="h">#E8DDC2</div></div>
+          <div class="swatch"><div class="chip" style="background:#DB9A94"></div><div class="n">Clay Rose</div><div class="h">#DB9A94</div></div>
+          <div class="swatch"><div class="chip" style="background:#C96532"></div><div class="n">Terracotta · primary</div><div class="h">#C96532</div></div>
+          <div class="swatch"><div class="chip" style="background:#A8B89A"></div><div class="n">Sage</div><div class="h">#A8B89A</div></div>
+          <div class="swatch"><div class="chip" style="background:#F2A938"></div><div class="n">Marigold · accent</div><div class="h">#F2A938</div></div>
+          <div class="swatch"><div class="chip" style="background:#FF6B5D"></div><div class="n">Coral · accent</div><div class="h">#FF6B5D</div></div>
+          <div class="swatch"><div class="chip" style="background:#3A332C"></div><div class="n">Espresso</div><div class="h">#3A332C</div></div>
+        </div>
+
+        <div class="specimen">
+          <div class="dm">Find your people.</div>
+          <div class="pf">Motherhood feels lighter together.</div>
+          <div class="meta"><b>Headers:</b> DM Serif Display &nbsp;·&nbsp; <b>Subheads &amp; body:</b> Inter &nbsp;·&nbsp; <b>Accent:</b> Playfair Display Italic<br><b>Color:</b> Terracotta leads; Coral &amp; Marigold reserved for CTAs and flourishes only.</div>
+        </div>
+        <h2>2 · The website</h2>
+        <p>The redesigned website has one job: turn a curious mom into a member. It opens on an honest, emotional promise — <strong>“Motherhood doesn't have to feel so lonely.”</strong> — over a warm video of real moms, then makes joining effortless: <em>free forever, no credit card, join in under 60 seconds.</em> A proof strip — <strong>6,000+ Utah moms, 200+ events a year, 50+ local partners</strong> — builds instant trust, with clear paths to join free or download the app.</p>
+        <ul class="checks">
+          <li>Local Events — always something to do</li>
+          <li>Real Community — advice &amp; support</li>
+          <li>Exclusive Perks — deals just for moms</li>
+          <li>Helpful Resources — local guides</li>
+          <li>County-based, frictionless signup</li>
+          <li>Brand-partner path for businesses</li>
+        </ul>
+        <blockquote style="font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:#C96532;margin:24px 0;line-height:1.4">“I moved here not knowing anyone, and MomTribe helped me find my people.”<span style="display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;margin-top:10px">Jenna · Utah County Mom</span></blockquote>
+        <div class="cs-parallax reveal"><video data-parallax="0.05" src="work-assets/momtribe-website.mp4" poster="work-assets/momtribe-website-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+        <p class="cs-cap"><em>The redesigned MomTribe website — a warm video hero, honest headline, and a 60-second path to join.</em></p>
+
+        <h2>3 · Website → app</h2>
+        <p>Rather than build a separate product from scratch, we took the responsive web experience and wrapped it into a native app — the <strong>MomTribeApp</strong>, now live on the App Store. That got moms a real, downloadable app fast, without fragmenting the brand or maintaining two codebases. The website gets moms in the door; the app is where the community lives day to day. New members are welcomed with the community's values, then land in a warm home base: <em>“Hi mama, your tribe is right here.”</em> From there they browse curated <strong>Events</strong>, join local <strong>Meetups</strong>, unlock savings in the <strong>Deal Depot</strong>, collect stamps with <strong>MyPassport</strong> QR check-ins at events, earn <strong>points &amp; rewards</strong>, enter giveaways, and connect in the <strong>Community</strong> feed — with local businesses woven in as sponsors. Membership scales from a free “Seed Member” tier to premium.</p>
+        <p><strong>Two changes were built specifically to lift engagement.</strong> The old site's static news &amp; announcements became a <strong>Facebook-style Community feed</strong> where moms post, comment, and connect in real time. And the old one-off <strong>auction</strong> was replaced with a <strong>rewards system</strong> — moms earn points for the actions that actually grow the community (share a post, refer a friend, show up to an event) and redeem them in an online swag store. Engagement on the old site sat around <strong>5%</strong>; the community-and-rewards model is designed to turn passive members into active ones.</p>
+        <div class="cs-parallax reveal"><img data-parallax="0.06" src="work-assets/momtribe-old-portal.png" alt="The old MomTribe web portal — News, Partners, Deal Depot and Auction tabs in the previous maroon brand" loading="lazy"></div>
+        <p class="cs-cap"><em>Before: the old web portal — News, Partners, Deal Depot, and a static Auction. Below: the native app it became.</em></p>
+        <ul class="checks">
+          <li>Values-first onboarding</li>
+          <li>Curated &amp; ticketed events</li>
+          <li>Local meetups by ZIP</li>
+          <li>Deal Depot member savings</li>
+          <li>MyPassport — QR stamps &amp; prizes</li>
+          <li>Points wallet &amp; rewards</li>
+          <li>Community feed &amp; directory</li>
+          <li>Local business sponsors</li>
+          <li>Giveaways &amp; resources</li>
+          <li>Free &amp; premium membership</li>
+        </ul>
+
+        <div class="shots reveal">
+          <div class="shot"><img data-parallax="0.03" src="work-assets/app2.png" alt="MomTribe app home screen — 'Hi mama, your tribe is right here' with the Your space grid" loading="lazy"><div class="pcap">Home — your space</div></div>
+          <div class="shot"><img data-parallax="0.07" src="work-assets/app4.png" alt="MomTribe app Events screen with a sponsor and MyPassport stamps" loading="lazy"><div class="pcap">Events &amp; MyPassport</div></div>
+          <div class="shot"><img data-parallax="0.04" src="work-assets/app3.png" alt="MomTribe app Community feed screen" loading="lazy"><div class="pcap">Community feed</div></div>
+          <div class="shot"><img data-parallax="0.06" src="work-assets/app6.png" alt="MomTribe app member profile with points and rewards" loading="lazy"><div class="pcap">Profile &amp; rewards</div></div>
+        </div>
+        <p class="center"><a class="appstore" href="https://apps.apple.com/us/app/momtribeapp/id6785309690"> Download on the App Store</a></p>
+        <p style="font-size:13px;color:var(--ink-soft)"><em>Real screens from the live MomTribeApp — values-first onboarding, home, events, community, and member rewards.</em></p>
+
+        <h2>The outcome</h2>
+        <p>MomTribe now has a coherent identity across every surface — social, web, and a native app on the App Store — a community of <strong>6,000+ Utah moms</strong>, <strong>200+ events a year</strong>, and a clear, repeatable model for launching new counties. Where the old site saw roughly <strong>5% engagement</strong>, the new Community feed and rewards system are built to turn passive members into active ones. <em>[Add post-launch results here — engagement lift, partner businesses, points redeemed, new counties.]</em></p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <p class="eyebrow reveal">More work</p>
+        <h2 class="reveal">Want a brand<br><em>built like this?</em></h2>
+        <div class="reveal"><a href="/contact" class="btn btn-primary">Start a project →</a> <a href="/work" class="btn btn-ghost">See all work</a></div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="/" class="logo">St<svg class="o" viewBox="0 0 28 28" aria-hidden="true"><rect x="3.5" y="3.5" width="21" height="21" rx="5" fill="none" stroke="currentColor" stroke-width="3.2"/><rect x="5" y="13" width="18" height="3" fill="var(--coral)"/></svg>rey<span class="brick"></span></a>
+    <div class="foot-links"><a href="/work">Work</a><a href="/services">Services</a><a href="/about">About</a><a href="/contact">Contact</a></div>
+    <small>© 2026 Storey · Brand-led design &amp; build · madebystorey.com</small>
+  </div>
+</footer>
+<script src="storey.js"></script>
+</body>
+</html>
