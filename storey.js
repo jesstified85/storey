@@ -1,6 +1,8 @@
 /* Storey — shared interactions (Apple-style: smooth, scroll-linked, restrained) */
 (function () {
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = matchMedia('(pointer: fine)').matches;
+  var GSAP_PAGE = document.body.classList.contains('gsap'); // homepage motion handled by home.js
 
   /* ---- Smart header ---- */
   var hdr = document.getElementById('hdr');
@@ -17,7 +19,9 @@
 
   /* ---- Reveal on scroll (staggered, smooth) ---- */
   var revealEls = document.querySelectorAll('.reveal,[data-reveal]');
-  if (reduce) {
+  if (GSAP_PAGE) {
+    /* homepage reveals handled by home.js (GSAP) */
+  } else if (reduce) {
     revealEls.forEach(function (el) { el.classList.add('in'); });
   } else {
     var io = new IntersectionObserver(function (entries) {
@@ -26,7 +30,7 @@
           var el = e.target;
           var group = el.parentElement ? el.parentElement.children : [el];
           var idx = Array.prototype.indexOf.call(group, el);
-          el.style.transitionDelay = Math.min(idx, 6) * 80 + 'ms';
+          el.style.transitionDelay = Math.min(idx, 6) * 105 + 'ms';
           el.classList.add('in');
           io.unobserve(el);
         }
@@ -40,6 +44,43 @@
   if (h1 && !reduce) {
     requestAnimationFrame(function () { setTimeout(function () { h1.classList.add('in'); }, 120); });
   } else if (h1) { h1.classList.add('in'); }
+
+  /* ---- Kinetic hero: cycling verb ---- */
+  var rot = document.querySelector('.hero .rot-word');
+  if (rot) {
+    var words = (rot.getAttribute('data-words') || 'brand,design,build,ship').split(',');
+    if (reduce) {
+      rot.textContent = 'brand, design & build';
+    } else {
+      var wi = 0, box = rot.parentElement;
+      setInterval(function () {
+        box.classList.add('out');
+        setTimeout(function () {
+          wi = (wi + 1) % words.length;
+          rot.textContent = words[wi];
+          box.classList.remove('out');
+        }, 500);
+      }, 2200);
+    }
+  }
+
+  /* ---- Kinetic hero: mouse-reactive visual ---- */
+  var heroEl = document.querySelector('.hero');
+  var layers = heroEl ? heroEl.querySelectorAll('.hero-visual .layer') : [];
+  if (heroEl && layers.length && fine && !reduce) {
+    heroEl.addEventListener('pointermove', function (e) {
+      var r = heroEl.getBoundingClientRect();
+      var nx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      var ny = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      layers.forEach(function (l) {
+        var d = parseFloat(l.getAttribute('data-depth')) || 20;
+        l.style.transform = 'translate(' + (nx * d).toFixed(1) + 'px,' + (ny * d).toFixed(1) + 'px)';
+      });
+    });
+    heroEl.addEventListener('pointerleave', function () {
+      layers.forEach(function (l) { l.style.transform = ''; });
+    });
+  }
 
   /* ---- Count-up stats ---- */
   function countUp(el) {
@@ -102,11 +143,33 @@
     }
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } header(); }
-  if (reduce) { header(); }
+  if (GSAP_PAGE) { addEventListener('scroll', header, { passive: true }); header(); }
+  else if (reduce) { header(); }
   else {
     addEventListener('scroll', onScroll, { passive: true });
     addEventListener('resize', frame, { passive: true });
     frame(); header();
+  }
+
+  /* ---- Pinned storytelling ---- */
+  var pin = document.querySelector('.pin');
+  var pinLines = pin ? pin.querySelectorAll('.pin-line') : [];
+  if (!GSAP_PAGE && pin && pinLines.length) {
+    if (reduce) {
+      pinLines.forEach(function (l) { l.classList.add('active'); });
+    } else {
+      var pinUpdate = function () {
+        var top = pin.getBoundingClientRect().top;
+        var total = pin.offsetHeight - window.innerHeight;
+        var prog = total > 0 ? Math.min(Math.max(-top / total, 0), 0.9999) : 0;
+        var idx = Math.floor(prog * pinLines.length);
+        if (idx > pinLines.length - 1) idx = pinLines.length - 1;
+        pinLines.forEach(function (l, k) { l.classList.toggle('active', k === idx); });
+      };
+      addEventListener('scroll', pinUpdate, { passive: true });
+      addEventListener('resize', pinUpdate, { passive: true });
+      pinUpdate();
+    }
   }
 
   /* ---- Mobile menu toggle ---- */
